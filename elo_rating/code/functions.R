@@ -8,6 +8,7 @@ sigma <- function(r, k, s){
   return(10^lresult)
 }
 
+
 sim_data <- function(n, mu, sd, k, s){
   r_n <- rnorm(n, mu , sd)
   
@@ -51,4 +52,37 @@ sim_data <- function(n, mu, sd, k, s){
   write.csv(matches, 
             "elo_rating/data/simulated_results.csv", 
             row.names=FALSE)
+}
+
+
+lfn_elo_rating <- function(r, results){
+  n_r <- length(r)
+  r_n <- c(1, r[1:(n_r-1)])
+  rating <- data.frame(team = c(1:(n_r)),
+                       rating = r_n)
+  
+  k <- r[n_r]
+  s <- 400
+  n_matches <- dim(results)[1]
+  
+  lfn <- 0
+  for(i in 1:n_matches){
+    home_team <- results[i, "home"]
+    away_team <- results[i, "away"]
+    result <- results[i, "result"]
+    r_h <- rating[rating["team"] == home_team, "rating"]
+    r_a <- rating[rating["team"] == away_team, "rating"]
+    r_ah <- r_h - r_a
+    
+    if(result == 1){
+      lfn <- lfn + r_ah/s - log10(10^(r_ah/s) + 10^(-r_ah/s) + k)
+    }
+    else if(result == 0){
+      lfn <- lfn - r_ah/s - log10(10^(r_ah/s) + 10^(-r_ah/s) + k)
+    }
+    else if(result == 1/2){
+      lfn <- lfn + log10(k) - log10(10^(r_ah/s) + 10^(-r_ah/s) + k)
+    }
+  }
+  return(-lfn)
 }
