@@ -1,0 +1,201 @@
+---
+title: "Simulating Data"
+output: html_document
+date: "2023-07-11"
+---
+
+```{r}
+setwd(paste("C:/Users/ezequ/OneDrive - Fundacao Getulio Vargas - FGV/",
+            "Grad MAp FGV/IC/modeling-brazilian-soccer", sep = ""))
+
+source("elo_rating/simulation/code/functions.R")
+```
+
+# Model
+
+Given two teams $A$ and $B$ with ratings $r_A$ and $r_B$, the model is
+
+```{=latex}
+\begin{align*}
+  \mathbb{P}(A \ wins) = \frac{r_A^2}{r_A^2 + r_B^2 + r_A r_B k}
+  \\
+  \mathbb{P}(B \ wins) = \frac{r_B^2}{r_A^2 + r_B^2 + r_A r_B k}
+  \\
+  \mathbb{P}(draw) = \frac{r_A r_B k}{r_A^2 + r_B^2 + r_A r_B k}
+
+\end{align*}
+```
+for $k > 0$.
+
+# Simulation without estimating k
+
+Given *n_teams* teams, *n_matches* matches between teams (home and away), a mean
+*mu* and a standard deviation *sd*, the *sim_data()* function generates ratings 
+from normal distribution for teams and simulates the results for matches.
+
+### Two teams ($k = 0$)
+
+For small number of matches, the result is bad:
+
+```{r}
+n_teams <- 2
+n_matches <- 50
+mu <- 20
+sd <- 4
+k <- 0
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams-1))
+opt <- optim(initial_values, fn = lfn_elo_rating, results = results,
+             lower= rep(10^(-10), n_teams-1), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par)
+
+rating
+```
+
+For a large number, the result improves:
+
+```{r}
+n_teams <- 2
+n_matches <- 1000
+mu <- 20
+sd <- 4
+k <- 0
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams-1))
+opt <- optim(initial_values, fn = lfn_elo_rating, results = results,
+             lower= rep(10^(-10), n_teams-1), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par)
+
+rating
+```
+
+### Two teams ($k > 0$)
+
+```{r}
+n_teams <- 2
+n_matches <- 1000
+mu <- 20
+sd <- 4
+k <- 5
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams-1))
+opt <- optim(initial_values, fn = lfn_elo_rating_with_draw_k, results = results, 
+             k = k, lower= rep(10^(-10), n_teams-1), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par)
+
+rating
+```
+
+### More than two teams ($k = 0$)
+
+```{r}
+n_teams <- 5
+n_matches <- 20
+mu <- 20
+sd <- 4
+k <- 0
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams-1))
+opt <- optim(initial_values, fn = lfn_elo_rating, results = results,
+               lower= rep(10^(-10), n_teams-1), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par)
+
+rating
+
+```
+
+### More than two teams ($k > 0$)
+
+```{r}
+n_teams <- 5
+n_matches <- 20
+mu <- 20
+sd <- 4
+k <- 5
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams-1))
+opt <- optim(initial_values, fn = lfn_elo_rating_with_draw_k, results = results, 
+             k = k, lower= rep(10^(-10), n_teams-1), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par)
+
+rating
+
+```
+
+# Simulation estimating k
+
+### Two teams
+
+```{r}
+n_teams <- 2
+n_matches <- 1000
+mu <- 20
+sd <- 4
+k <- 5
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams))
+opt <- optim(initial_values, fn = lfn_elo_rating_with_draw, results = results,
+             lower= rep(10^(-10), n_teams), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par[1:(n_teams-1)])
+df_k <- data.frame(k = k,
+                   k_hat = opt$par[n_teams])
+
+rating
+df_k
+```
+
+### More than two teams
+
+```{r}
+n_teams <- 5
+n_matches <- 20
+mu <- 20
+sd <- 4
+k <- 8
+
+sim_data(n_teams, n_matches, mu, sd, k)
+
+rating <- read.csv("elo_rating/simulation/data/simulated_rating.csv")
+results <- read.csv("elo_rating/simulation/data/simulated_results.csv")
+
+initial_values <- c(rep(100, n_teams))
+opt <- optim(initial_values, fn = lfn_elo_rating_with_draw, results = results,
+             lower= rep(10^(-10), n_teams), method="L-BFGS-B")
+rating$r_hat <- c(1, opt$par[1:(n_teams-1)])
+df_k <- data.frame(k = k,
+                   k_hat = opt$par[n_teams])
+
+rating
+df_k
+```
+
