@@ -4,10 +4,13 @@ output: html_document
 date: "2023-07-11"
 ---
 
-```{r}
-setwd(paste("C:/Users/ezequ/OneDrive - Fundacao Getulio Vargas - FGV/",
-            "Grad MAp FGV/IC/modeling-brazilian-soccer", sep = ""))
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = paste("C:/Users/ezequ/OneDrive - Fundacao",
+                                      " Getulio Vargas - FGV/Grad MAp FGV/IC/",
+                                      "modeling-brazilian-soccer", sep = ""))
+```
 
+```{r}
 source("elo_rating/simulation/code/functions.R")
 ```
 

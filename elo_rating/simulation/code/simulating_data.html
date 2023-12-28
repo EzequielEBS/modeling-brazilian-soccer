@@ -355,10 +355,7 @@ display: none;
 </div>
 
 
-<pre class="r"><code>setwd(paste(&quot;C:/Users/ezequ/OneDrive - Fundacao Getulio Vargas - FGV/&quot;,
-            &quot;Grad MAp FGV/IC/modeling-brazilian-soccer&quot;, sep = &quot;&quot;))
-
-source(&quot;elo_rating/simulation/code/functions.R&quot;)</code></pre>
+<pre class="r"><code>source(&quot;elo_rating/simulation/code/functions.R&quot;)</code></pre>
 <div id="model" class="section level1">
 <h1>Model</h1>
 <p>Given two teams <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with ratings <span class="math inline">\(r_A\)</span> and <span class="math inline">\(r_B\)</span>, the model is</p>
@@ -367,7 +364,7 @@ source(&quot;elo_rating/simulation/code/functions.R&quot;)</code></pre>
   \\
   \mathbb{P}(B \ wins) = \frac{r_B^2}{r_A^2 + r_B^2 + r_A r_B k}
   \\
-  \mathbb{P}(draw) = \frac{r_A r_B \kappa}{r_A^2 + r_B^2 + r_A r_B k}
+  \mathbb{P}(draw) = \frac{r_A r_B k}{r_A^2 + r_B^2 + r_A r_B k}
 
 \end{align*}\]</span>
 <p>for <span class="math inline">\(k &gt; 0\)</span>.</p>
@@ -398,9 +395,9 @@ opt &lt;- optim(initial_values, fn = lfn_elo_rating, results = results,
 rating$r_hat &lt;- c(1, opt$par)
 
 rating</code></pre>
-<pre><code>##   team    rating     r_hat
-## 1    1 1.0000000 1.0000000
-## 2    2 0.4539658 0.3513525</code></pre>
+<pre><code>##   team   rating    r_hat
+## 1    1 1.000000 1.000000
+## 2    2 1.266762 1.272728</code></pre>
 <p>For a large number, the result improves:</p>
 <pre class="r"><code>n_teams &lt;- 2
 n_matches &lt;- 1000
@@ -421,7 +418,7 @@ rating$r_hat &lt;- c(1, opt$par)
 rating</code></pre>
 <pre><code>##   team    rating     r_hat
 ## 1    1 1.0000000 1.0000000
-## 2    2 0.7551683 0.7094024</code></pre>
+## 2    2 0.6028979 0.6116035</code></pre>
 </div>
 <div id="two-teams-k-0-1" class="section level3">
 <h3>Two teams (<span class="math inline">\(k &gt; 0\)</span>)</h3>
@@ -442,9 +439,9 @@ opt &lt;- optim(initial_values, fn = lfn_elo_rating_with_draw_k, results = resul
 rating$r_hat &lt;- c(1, opt$par)
 
 rating</code></pre>
-<pre><code>##   team   rating    r_hat
-## 1    1 1.000000 1.000000
-## 2    2 1.254161 1.199444</code></pre>
+<pre><code>##   team  rating    r_hat
+## 1    1 1.00000 1.000000
+## 2    2 1.03371 1.035619</code></pre>
 </div>
 <div id="more-than-two-teams-k-0" class="section level3">
 <h3>More than two teams (<span class="math inline">\(k =
@@ -466,12 +463,12 @@ opt &lt;- optim(initial_values, fn = lfn_elo_rating, results = results,
 rating$r_hat &lt;- c(1, opt$par)
 
 rating</code></pre>
-<pre><code>##   team   rating    r_hat
-## 1    1 1.000000 1.000000
-## 2    2 1.102541 1.128950
-## 3    3 1.555410 1.559321
-## 4    4 1.370009 1.299678
-## 5    5 1.457377 1.199201</code></pre>
+<pre><code>##   team    rating     r_hat
+## 1    1 1.0000000 1.0000000
+## 2    2 1.1425335 0.8854457
+## 3    3 0.9997174 0.8168327
+## 4    4 0.9057358 0.7535834
+## 5    5 0.8923881 0.6026961</code></pre>
 </div>
 <div id="more-than-two-teams-k-0-1" class="section level3">
 <h3>More than two teams (<span class="math inline">\(k &gt;
@@ -493,12 +490,12 @@ opt &lt;- optim(initial_values, fn = lfn_elo_rating_with_draw_k, results = resul
 rating$r_hat &lt;- c(1, opt$par)
 
 rating</code></pre>
-<pre><code>##   team   rating     r_hat
-## 1    1 1.000000 1.0000000
-## 2    2 1.358680 1.1106546
-## 3    3 1.206778 1.2121211
-## 4    4 1.034659 0.9826681
-## 5    5 1.274050 1.0724705</code></pre>
+<pre><code>##   team    rating     r_hat
+## 1    1 1.0000000 1.0000000
+## 2    2 0.6483874 0.6159132
+## 3    3 0.4749111 0.4149270
+## 4    4 0.9732929 0.9659787
+## 5    5 1.1728327 1.3181251</code></pre>
 </div>
 </div>
 <div id="simulation-estimating-k" class="section level1">
@@ -524,12 +521,12 @@ df_k &lt;- data.frame(k = k,
                    k_hat = opt$par[n_teams])
 
 rating</code></pre>
-<pre><code>##   team   rating   r_hat
-## 1    1 1.000000 1.00000
-## 2    2 1.060852 0.99651</code></pre>
+<pre><code>##   team   rating    r_hat
+## 1    1 1.000000 1.000000
+## 2    2 1.366121 1.398377</code></pre>
 <pre class="r"><code>df_k</code></pre>
 <pre><code>##   k    k_hat
-## 1 5 4.993039</code></pre>
+## 1 5 4.966716</code></pre>
 </div>
 <div id="more-than-two-teams" class="section level3">
 <h3>More than two teams</h3>
@@ -554,13 +551,13 @@ df_k &lt;- data.frame(k = k,
 rating</code></pre>
 <pre><code>##   team    rating     r_hat
 ## 1    1 1.0000000 1.0000000
-## 2    2 1.0226266 0.9581775
-## 3    3 0.8732559 0.6108862
-## 4    4 0.8355894 0.6512602
-## 5    5 0.7487430 0.8070964</code></pre>
+## 2    2 1.0003549 1.2097913
+## 3    3 0.6099657 0.8265997
+## 4    4 0.8607948 1.2097933
+## 5    5 1.0165750 0.8265963</code></pre>
 <pre class="r"><code>df_k</code></pre>
 <pre><code>##   k    k_hat
-## 1 8 6.646537</code></pre>
+## 1 8 8.982693</code></pre>
 </div>
 </div>
 
