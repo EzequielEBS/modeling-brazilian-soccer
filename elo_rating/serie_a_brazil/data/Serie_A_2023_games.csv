@@ -1,0 +1,381 @@
+"home","away","y"
+"Flamengo / RJ","Coritiba / PR",1
+"Botafogo / RJ","São Paulo / SP",1
+"Palmeiras / SP","Cuiabá / MT",1
+"Corinthians / SP","Cruzeiro / MG",1
+"Red Bull Bragantino / SP","Bahia / BA",1
+"Atlético Mineiro / MG","Vasco da Gama / RJ",0
+"Grêmio / RS","Santos / SP",1
+"Athletico Paranaense / PR","Goiás / GO",1
+"Fortaleza / CE","Internacional / RS",0.5
+"América / MG","Fluminense / RJ",0
+"Fluminense / RJ","Athletico Paranaense / PR",1
+"Vasco da Gama / RJ","Palmeiras / SP",0.5
+"São Paulo / SP","América / MG",1
+"Santos / SP","Atlético Mineiro / MG",0.5
+"Goiás / GO","Corinthians / SP",1
+"Cruzeiro / MG","Grêmio / RS",1
+"Internacional / RS","Flamengo / RJ",1
+"Coritiba / PR","Fortaleza / CE",0
+"Bahia / BA","Botafogo / RJ",0
+"Cuiabá / MT","Red Bull Bragantino / SP",0.5
+"Flamengo / RJ","Botafogo / RJ",0
+"Vasco da Gama / RJ","Bahia / BA",0
+"Palmeiras / SP","Corinthians / SP",1
+"Santos / SP","América / MG",1
+"Red Bull Bragantino / SP","Cruzeiro / MG",0
+"Atlético Mineiro / MG","Athletico Paranaense / PR",1
+"Internacional / RS","Goiás / GO",1
+"Coritiba / PR","São Paulo / SP",0.5
+"Fortaleza / CE","Fluminense / RJ",1
+"Cuiabá / MT","Grêmio / RS",0
+"Fluminense / RJ","Vasco da Gama / RJ",0.5
+"Botafogo / RJ","Atlético Mineiro / MG",1
+"São Paulo / SP","Internacional / RS",1
+"Corinthians / SP","Fortaleza / CE",0.5
+"Goiás / GO","Palmeiras / SP",0
+"Cruzeiro / MG","Santos / SP",1
+"Grêmio / RS","Red Bull Bragantino / SP",0.5
+"Athletico Paranaense / PR","Flamengo / RJ",1
+"Bahia / BA","Coritiba / PR",1
+"América / MG","Cuiabá / MT",0
+"Flamengo / RJ","Goiás / GO",1
+"Botafogo / RJ","Corinthians / SP",1
+"Palmeiras / SP","Grêmio / RS",1
+"Santos / SP","Bahia / BA",1
+"Red Bull Bragantino / SP","América / MG",0.5
+"Cruzeiro / MG","Fluminense / RJ",0
+"Internacional / RS","Athletico Paranaense / PR",0
+"Coritiba / PR","Vasco da Gama / RJ",0.5
+"Fortaleza / CE","São Paulo / SP",0.5
+"Cuiabá / MT","Atlético Mineiro / MG",0
+"Fluminense / RJ","Cuiabá / MT",1
+"Vasco da Gama / RJ","Santos / SP",0
+"Palmeiras / SP","Red Bull Bragantino / SP",0.5
+"Corinthians / SP","São Paulo / SP",0.5
+"Goiás / GO","Botafogo / RJ",1
+"Atlético Mineiro / MG","Internacional / RS",1
+"Grêmio / RS","Fortaleza / CE",0.5
+"Athletico Paranaense / PR","Coritiba / PR",1
+"Bahia / BA","Flamengo / RJ",0
+"América / MG","Cruzeiro / MG",0
+"Flamengo / RJ","Corinthians / SP",1
+"Botafogo / RJ","Fluminense / RJ",1
+"São Paulo / SP","Vasco da Gama / RJ",1
+"Santos / SP","Palmeiras / SP",0.5
+"Red Bull Bragantino / SP","Athletico Paranaense / PR",1
+"Cruzeiro / MG","Cuiabá / MT",0
+"Grêmio / RS","Internacional / RS",1
+"Coritiba / PR","Atlético Mineiro / MG",0
+"Bahia / BA","Goiás / GO",0.5
+"América / MG","Fortaleza / CE",1
+"Flamengo / RJ","Cruzeiro / MG",0.5
+"Botafogo / RJ","América / MG",1
+"São Paulo / SP","Goiás / GO",1
+"Corinthians / SP","Fluminense / RJ",1
+"Red Bull Bragantino / SP","Santos / SP",1
+"Atlético Mineiro / MG","Palmeiras / SP",0.5
+"Internacional / RS","Bahia / BA",1
+"Athletico Paranaense / PR","Grêmio / RS",0
+"Fortaleza / CE","Vasco da Gama / RJ",1
+"Cuiabá / MT","Coritiba / PR",0.5
+"Fluminense / RJ","Red Bull Bragantino / SP",1
+"Vasco da Gama / RJ","Flamengo / RJ",0
+"Palmeiras / SP","Coritiba / PR",1
+"Santos / SP","Internacional / RS",0.5
+"Goiás / GO","Cuiabá / MT",0
+"Cruzeiro / MG","Atlético Mineiro / MG",0
+"Grêmio / RS","São Paulo / SP",1
+"Athletico Paranaense / PR","Botafogo / RJ",1
+"Fortaleza / CE","Bahia / BA",0.5
+"América / MG","Corinthians / SP",1
+"Flamengo / RJ","Grêmio / RS",1
+"Botafogo / RJ","Fortaleza / CE",1
+"São Paulo / SP","Palmeiras / SP",0
+"Corinthians / SP","Cuiabá / MT",0.5
+"Goiás / GO","Fluminense / RJ",0.5
+"Atlético Mineiro / MG","Red Bull Bragantino / SP",0.5
+"Internacional / RS","Vasco da Gama / RJ",1
+"Coritiba / PR","Santos / SP",0.5
+"Bahia / BA","Cruzeiro / MG",0.5
+"América / MG","Athletico Paranaense / PR",0.5
+"Fluminense / RJ","Atlético Mineiro / MG",0.5
+"Vasco da Gama / RJ","Goiás / GO",0
+"São Paulo / SP","Athletico Paranaense / PR",1
+"Santos / SP","Corinthians / SP",0
+"Red Bull Bragantino / SP","Flamengo / RJ",1
+"Cruzeiro / MG","Fortaleza / CE",0
+"Grêmio / RS","América / MG",1
+"Coritiba / PR","Internacional / RS",0
+"Bahia / BA","Palmeiras / SP",1
+"Cuiabá / MT","Botafogo / RJ",0
+"Fluminense / RJ","Bahia / BA",1
+"Vasco da Gama / RJ","Cuiabá / MT",1
+"Palmeiras / SP","Botafogo / RJ",0
+"Santos / SP","Flamengo / RJ",0
+"Red Bull Bragantino / SP","Goiás / GO",1
+"Cruzeiro / MG","São Paulo / SP",1
+"Grêmio / RS","Coritiba / PR",1
+"Athletico Paranaense / PR","Corinthians / SP",1
+"Fortaleza / CE","Atlético Mineiro / MG",1
+"América / MG","Internacional / RS",0
+"Flamengo / RJ","Fortaleza / CE",1
+"Botafogo / RJ","Vasco da Gama / RJ",1
+"São Paulo / SP","Fluminense / RJ",1
+"Corinthians / SP","Red Bull Bragantino / SP",0
+"Goiás / GO","Coritiba / PR",0
+"Atlético Mineiro / MG","América / MG",0.5
+"Internacional / RS","Cruzeiro / MG",0.5
+"Athletico Paranaense / PR","Palmeiras / SP",0.5
+"Bahia / BA","Grêmio / RS",0
+"Cuiabá / MT","Santos / SP",1
+"Fluminense / RJ","Internacional / RS",1
+"Vasco da Gama / RJ","Cruzeiro / MG",0
+"Palmeiras / SP","Flamengo / RJ",0.5
+"Santos / SP","Goiás / GO",1
+"Red Bull Bragantino / SP","São Paulo / SP",0.5
+"Atlético Mineiro / MG","Corinthians / SP",0
+"Grêmio / RS","Botafogo / RJ",0
+"Coritiba / PR","América / MG",1
+"Fortaleza / CE","Athletico Paranaense / PR",1
+"Cuiabá / MT","Bahia / BA",0.5
+"Fluminense / RJ","Flamengo / RJ",0.5
+"Botafogo / RJ","Red Bull Bragantino / SP",1
+"São Paulo / SP","Santos / SP",1
+"Corinthians / SP","Grêmio / RS",0.5
+"Goiás / GO","Atlético Mineiro / MG",0.5
+"Cruzeiro / MG","Coritiba / PR",0.5
+"Internacional / RS","Palmeiras / SP",0.5
+"Athletico Paranaense / PR","Bahia / BA",1
+"Fortaleza / CE","Cuiabá / MT",0
+"América / MG","Vasco da Gama / RJ",0
+"Flamengo / RJ","América / MG",0.5
+"Vasco da Gama / RJ","Athletico Paranaense / PR",0
+"Palmeiras / SP","Fortaleza / CE",1
+"Santos / SP","Botafogo / RJ",0.5
+"Red Bull Bragantino / SP","Internacional / RS",0.5
+"Cruzeiro / MG","Goiás / GO",0
+"Grêmio / RS","Atlético Mineiro / MG",1
+"Coritiba / PR","Fluminense / RJ",1
+"Bahia / BA","Corinthians / SP",0.5
+"Cuiabá / MT","São Paulo / SP",1
+"Fluminense / RJ","Santos / SP",1
+"Botafogo / RJ","Coritiba / PR",1
+"São Paulo / SP","Bahia / BA",0.5
+"Corinthians / SP","Vasco da Gama / RJ",1
+"Goiás / GO","Grêmio / RS",0.5
+"Atlético Mineiro / MG","Flamengo / RJ",0
+"Internacional / RS","Cuiabá / MT",0
+"Athletico Paranaense / PR","Cruzeiro / MG",0.5
+"Fortaleza / CE","Red Bull Bragantino / SP",0
+"América / MG","Palmeiras / SP",0
+"Fluminense / RJ","Palmeiras / SP",1
+"Vasco da Gama / RJ","Grêmio / RS",1
+"São Paulo / SP","Atlético Mineiro / MG",0
+"Santos / SP","Athletico Paranaense / PR",0.5
+"Goiás / GO","Fortaleza / CE",1
+"Cruzeiro / MG","Botafogo / RJ",0.5
+"Internacional / RS","Corinthians / SP",0.5
+"Coritiba / PR","Red Bull Bragantino / SP",0
+"Bahia / BA","América / MG",1
+"Cuiabá / MT","Flamengo / RJ",1
+"Flamengo / RJ","São Paulo / SP",0.5
+"Botafogo / RJ","Internacional / RS",1
+"Palmeiras / SP","Cruzeiro / MG",1
+"Corinthians / SP","Coritiba / PR",1
+"Red Bull Bragantino / SP","Vasco da Gama / RJ",0.5
+"Atlético Mineiro / MG","Bahia / BA",1
+"Grêmio / RS","Fluminense / RJ",1
+"Athletico Paranaense / PR","Cuiabá / MT",1
+"Fortaleza / CE","Santos / SP",1
+"América / MG","Goiás / GO",0
+"Fluminense / RJ","América / MG",1
+"Vasco da Gama / RJ","Atlético Mineiro / MG",1
+"São Paulo / SP","Botafogo / RJ",0.5
+"Santos / SP","Grêmio / RS",1
+"Goiás / GO","Athletico Paranaense / PR",0.5
+"Cruzeiro / MG","Corinthians / SP",0.5
+"Internacional / RS","Fortaleza / CE",0
+"Coritiba / PR","Flamengo / RJ",0
+"Bahia / BA","Red Bull Bragantino / SP",1
+"Cuiabá / MT","Palmeiras / SP",0
+"Flamengo / RJ","Internacional / RS",0.5
+"Botafogo / RJ","Bahia / BA",1
+"Palmeiras / SP","Vasco da Gama / RJ",1
+"Corinthians / SP","Goiás / GO",0.5
+"Red Bull Bragantino / SP","Cuiabá / MT",1
+"Atlético Mineiro / MG","Santos / SP",1
+"Grêmio / RS","Cruzeiro / MG",1
+"Athletico Paranaense / PR","Fluminense / RJ",0.5
+"Fortaleza / CE","Coritiba / PR",1
+"América / MG","São Paulo / SP",1
+"Fluminense / RJ","Fortaleza / CE",1
+"Botafogo / RJ","Flamengo / RJ",0
+"São Paulo / SP","Coritiba / PR",1
+"Corinthians / SP","Palmeiras / SP",0.5
+"Goiás / GO","Internacional / RS",0.5
+"Cruzeiro / MG","Red Bull Bragantino / SP",0.5
+"Grêmio / RS","Cuiabá / MT",1
+"Athletico Paranaense / PR","Atlético Mineiro / MG",0.5
+"Bahia / BA","Vasco da Gama / RJ",0.5
+"América / MG","Santos / SP",1
+"Flamengo / RJ","Athletico Paranaense / PR",0
+"Vasco da Gama / RJ","Fluminense / RJ",1
+"Palmeiras / SP","Goiás / GO",1
+"Santos / SP","Cruzeiro / MG",0
+"Red Bull Bragantino / SP","Grêmio / RS",1
+"Atlético Mineiro / MG","Botafogo / RJ",1
+"Internacional / RS","São Paulo / SP",1
+"Coritiba / PR","Bahia / BA",0
+"Fortaleza / CE","Corinthians / SP",1
+"Cuiabá / MT","América / MG",0.5
+"Fluminense / RJ","Cruzeiro / MG",1
+"Vasco da Gama / RJ","Coritiba / PR",1
+"São Paulo / SP","Fortaleza / CE",0
+"Corinthians / SP","Botafogo / RJ",1
+"Goiás / GO","Flamengo / RJ",0.5
+"Atlético Mineiro / MG","Cuiabá / MT",1
+"Grêmio / RS","Palmeiras / SP",1
+"Athletico Paranaense / PR","Internacional / RS",1
+"Bahia / BA","Santos / SP",0
+"América / MG","Red Bull Bragantino / SP",0
+"Flamengo / RJ","Bahia / BA",1
+"Botafogo / RJ","Goiás / GO",0.5
+"São Paulo / SP","Corinthians / SP",1
+"Santos / SP","Vasco da Gama / RJ",1
+"Red Bull Bragantino / SP","Palmeiras / SP",1
+"Cruzeiro / MG","América / MG",0.5
+"Internacional / RS","Atlético Mineiro / MG",0
+"Coritiba / PR","Athletico Paranaense / PR",1
+"Fortaleza / CE","Grêmio / RS",0.5
+"Cuiabá / MT","Fluminense / RJ",1
+"Fluminense / RJ","Botafogo / RJ",0
+"Vasco da Gama / RJ","São Paulo / SP",0.5
+"Palmeiras / SP","Santos / SP",0
+"Corinthians / SP","Flamengo / RJ",0.5
+"Goiás / GO","Bahia / BA",0
+"Atlético Mineiro / MG","Coritiba / PR",0
+"Internacional / RS","Grêmio / RS",1
+"Athletico Paranaense / PR","Red Bull Bragantino / SP",0.5
+"Fortaleza / CE","América / MG",1
+"Cuiabá / MT","Cruzeiro / MG",0.5
+"Fluminense / RJ","Corinthians / SP",0.5
+"Vasco da Gama / RJ","Fortaleza / CE",1
+"Palmeiras / SP","Atlético Mineiro / MG",0
+"Santos / SP","Red Bull Bragantino / SP",0
+"Goiás / GO","São Paulo / SP",1
+"Cruzeiro / MG","Flamengo / RJ",0
+"Grêmio / RS","Athletico Paranaense / PR",0
+"Coritiba / PR","Cuiabá / MT",0
+"Bahia / BA","Internacional / RS",1
+"América / MG","Botafogo / RJ",0
+"Flamengo / RJ","Vasco da Gama / RJ",1
+"Botafogo / RJ","Athletico Paranaense / PR",0.5
+"São Paulo / SP","Grêmio / RS",1
+"Corinthians / SP","América / MG",0.5
+"Red Bull Bragantino / SP","Fluminense / RJ",1
+"Atlético Mineiro / MG","Cruzeiro / MG",0
+"Internacional / RS","Santos / SP",1
+"Coritiba / PR","Palmeiras / SP",0
+"Bahia / BA","Fortaleza / CE",1
+"Cuiabá / MT","Goiás / GO",0.5
+"Fluminense / RJ","Goiás / GO",1
+"Vasco da Gama / RJ","Internacional / RS",0
+"Palmeiras / SP","São Paulo / SP",1
+"Santos / SP","Coritiba / PR",1
+"Red Bull Bragantino / SP","Atlético Mineiro / MG",0
+"Cruzeiro / MG","Bahia / BA",1
+"Grêmio / RS","Flamengo / RJ",1
+"Athletico Paranaense / PR","América / MG",1
+"Fortaleza / CE","Botafogo / RJ",0.5
+"Cuiabá / MT","Corinthians / SP",0
+"Flamengo / RJ","Red Bull Bragantino / SP",1
+"Botafogo / RJ","Cuiabá / MT",0
+"Palmeiras / SP","Bahia / BA",1
+"Corinthians / SP","Santos / SP",0.5
+"Goiás / GO","Vasco da Gama / RJ",0.5
+"Atlético Mineiro / MG","Fluminense / RJ",1
+"Internacional / RS","Coritiba / PR",0
+"Athletico Paranaense / PR","São Paulo / SP",0.5
+"Fortaleza / CE","Cruzeiro / MG",0
+"América / MG","Grêmio / RS",0
+"Flamengo / RJ","Santos / SP",0
+"Botafogo / RJ","Palmeiras / SP",0
+"São Paulo / SP","Cruzeiro / MG",1
+"Corinthians / SP","Athletico Paranaense / PR",1
+"Goiás / GO","Red Bull Bragantino / SP",0
+"Atlético Mineiro / MG","Fortaleza / CE",1
+"Internacional / RS","América / MG",0.5
+"Coritiba / PR","Grêmio / RS",0
+"Bahia / BA","Fluminense / RJ",1
+"Cuiabá / MT","Vasco da Gama / RJ",0
+"Fluminense / RJ","São Paulo / SP",1
+"Vasco da Gama / RJ","Botafogo / RJ",1
+"Palmeiras / SP","Athletico Paranaense / PR",1
+"Santos / SP","Cuiabá / MT",0.5
+"Red Bull Bragantino / SP","Corinthians / SP",1
+"Cruzeiro / MG","Internacional / RS",0
+"Grêmio / RS","Bahia / BA",1
+"Coritiba / PR","Goiás / GO",0
+"Fortaleza / CE","Flamengo / RJ",0
+"América / MG","Atlético Mineiro / MG",0.5
+"Flamengo / RJ","Palmeiras / SP",1
+"Botafogo / RJ","Grêmio / RS",0
+"São Paulo / SP","Red Bull Bragantino / SP",1
+"Corinthians / SP","Atlético Mineiro / MG",0.5
+"Goiás / GO","Santos / SP",0
+"Cruzeiro / MG","Vasco da Gama / RJ",0.5
+"Internacional / RS","Fluminense / RJ",0.5
+"Athletico Paranaense / PR","Fortaleza / CE",0.5
+"Bahia / BA","Cuiabá / MT",0
+"América / MG","Coritiba / PR",0
+"Flamengo / RJ","Fluminense / RJ",0.5
+"Vasco da Gama / RJ","América / MG",1
+"Palmeiras / SP","Internacional / RS",1
+"Santos / SP","São Paulo / SP",0.5
+"Red Bull Bragantino / SP","Botafogo / RJ",0.5
+"Atlético Mineiro / MG","Goiás / GO",1
+"Grêmio / RS","Corinthians / SP",0
+"Coritiba / PR","Cruzeiro / MG",1
+"Bahia / BA","Athletico Paranaense / PR",0.5
+"Cuiabá / MT","Fortaleza / CE",1
+"Fluminense / RJ","Coritiba / PR",1
+"Botafogo / RJ","Santos / SP",0.5
+"São Paulo / SP","Cuiabá / MT",0.5
+"Corinthians / SP","Bahia / BA",0
+"Goiás / GO","Cruzeiro / MG",0
+"Atlético Mineiro / MG","Grêmio / RS",1
+"Internacional / RS","Red Bull Bragantino / SP",1
+"Athletico Paranaense / PR","Vasco da Gama / RJ",0.5
+"Fortaleza / CE","Palmeiras / SP",0.5
+"América / MG","Flamengo / RJ",0
+"Flamengo / RJ","Atlético Mineiro / MG",0
+"Vasco da Gama / RJ","Corinthians / SP",0
+"Palmeiras / SP","América / MG",1
+"Santos / SP","Fluminense / RJ",0
+"Red Bull Bragantino / SP","Fortaleza / CE",0
+"Cruzeiro / MG","Athletico Paranaense / PR",0.5
+"Grêmio / RS","Goiás / GO",1
+"Coritiba / PR","Botafogo / RJ",0.5
+"Bahia / BA","São Paulo / SP",0
+"Cuiabá / MT","Internacional / RS",0
+"Flamengo / RJ","Cuiabá / MT",1
+"Botafogo / RJ","Cruzeiro / MG",0.5
+"Palmeiras / SP","Fluminense / RJ",1
+"Corinthians / SP","Internacional / RS",0
+"Red Bull Bragantino / SP","Coritiba / PR",1
+"Atlético Mineiro / MG","São Paulo / SP",1
+"Grêmio / RS","Vasco da Gama / RJ",1
+"Athletico Paranaense / PR","Santos / SP",1
+"Fortaleza / CE","Goiás / GO",1
+"América / MG","Bahia / BA",1
+"Fluminense / RJ","Grêmio / RS",0
+"Vasco da Gama / RJ","Red Bull Bragantino / SP",1
+"São Paulo / SP","Flamengo / RJ",1
+"Santos / SP","Fortaleza / CE",0
+"Goiás / GO","América / MG",1
+"Cruzeiro / MG","Palmeiras / SP",0.5
+"Internacional / RS","Botafogo / RJ",1
+"Coritiba / PR","Corinthians / SP",0
+"Bahia / BA","Atlético Mineiro / MG",1
+"Cuiabá / MT","Athletico Paranaense / PR",1
