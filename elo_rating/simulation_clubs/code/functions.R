@@ -71,10 +71,10 @@ sim_data <- function(n_teams, n_matches, mu, sd, k){
     }
   }
   write.csv(rating, 
-            "elo_rating/simulation/data/simulated_rating.csv", 
+            "elo_rating/simulation_clubs/data/simulated_rating.csv", 
             row.names=FALSE)
   write.csv(matches, 
-            "elo_rating/simulation/data/simulated_results.csv", 
+            "elo_rating/simulation_clubs/data/simulated_results.csv", 
             row.names=FALSE)
 }
 

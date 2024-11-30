@@ -72,8 +72,18 @@ for (j in 1:length(all_squads)) {
     player_times_list_away <- list()
 
     for (i in 1:length(all_squads[[j]])) {
-        players_list_home[[i]] <- all_squads[[j]][[i]][["Home"]][["Squad"]]
-        players_list_away[[i]] <- all_squads[[j]][[i]][["Away"]][["Squad"]]
+        squad_home_ij <- all_squads[[j]][[i]][["Home"]][["Squad"]]
+        squad_away_ij <- all_squads[[j]][[i]][["Away"]][["Squad"]]
+        squad_home_ij[squad_home_ij == "38"] <- "692836"
+        squad_away_ij[squad_away_ij == "38"] <- "692836"
+        squad_home_ij[squad_home_ij == "8"] <- "292132"
+        squad_away_ij[squad_away_ij == "8"] <- "292132"
+        squad_home_ij[squad_home_ij == "99"] <- "307405"
+        squad_away_ij[squad_away_ij == "99"] <- "307405"
+        squad_home_ij[squad_home_ij == "40"] <- "541416"
+        squad_away_ij[squad_away_ij == "40"] <- "541416"
+        players_list_home[[i]] <- squad_home_ij
+        players_list_away[[i]] <- squad_away_ij
         player_times_list_home[[i]] <- rep(all_squads[[j]][[i]][["Time"]], length(players_list_home[[i]]))
         player_times_list_away[[i]] <- rep(all_squads[[j]][[i]][["Time"]], length(players_list_away[[i]]))
     }
@@ -164,23 +174,12 @@ save(player_array_away, file = "elo_rating/serie_a_brazil/elo_players/data/playe
 save(results_array, file = "elo_rating/serie_a_brazil/elo_players/data/results_array.RData")
 save(players_id, file = "elo_rating/serie_a_brazil/elo_players/data/players_id.RData")
 
-j <- 1
-for (i in 1:length(games_2023_json)){
-    if (games_2023_json[[i]][["Home"]] == "Flamengo / RJ"){
-        print(games_2023_json[[i]][["Players"]])
-        j <- j + 1
-    }
-    if (j == 5){
-        break
-    }
-}
-
 find_player_name <- function(id) {
     for (i in 1:length(all_games)){
         for (j in 1:length(all_games[[i]][["Players"]])){
             text <- all_games[[i]][["Players"]][[j]][1]
             if (substr(text, nchar(text) - 5, nchar(text)) == id){
-                return(all_games[[i]][["Players"]][[j]])
+                return(all_games[[i]][["Players"]][[j]][1])
             }
         }
     }
@@ -210,6 +209,19 @@ for (i in 1:length(all_games)){
 }
 
 save(results_array_clubs, file = "elo_rating/serie_a_brazil/elo_clubs/data/clubs_id.RData")
+
+
+players_names <- vector()
+
+for (i in 1:nrow(fit_summary)) {
+    player_id <- fit_summary$player_id[i]
+    player_name <- find_player_name(player_id)
+    players_names[i] <- player_name
+}
+
+df_players <- data.frame(player_id = players_id, player_name = players_names)
+write.csv(df_players, file = "elo_rating/serie_a_brazil/elo_players/data/players_names.csv", row.names = FALSE)
+
 
 # BH: 401839
 # Gabi: 337830

@@ -7,7 +7,7 @@ data {
 
 parameters {
     array[n_clubs] real<lower=0> rating; // clubs rating
-    real<lower=0> k; // draw factor
+    // real<lower=0> k; // draw factor
 }
 
 model {
@@ -15,20 +15,28 @@ model {
     for (i in 1:n_clubs) {
         target += normal_lpdf(rating[i] | 1000, 200);  
     }
-    target += gamma_lpdf(k | 2, 1);
+    // target += gamma_lpdf(k | 2, 1);
 
     // likelihood
     for (g in 1:n_games) {
         int home_id = clubs_id[g, 1];
         int away_id = clubs_id[g, 2];
         real result = results[g, 1];
-        real lden = log(rating[home_id]^2 + rating[away_id]^2 + rating[home_id]*rating[away_id]*k);
+        // real lden = log(rating[home_id]^2 + rating[away_id]^2 + rating[home_id]*rating[away_id]*k);
+        // if (result == 1) {
+        //     target += 2*log(rating[home_id]) - lden;
+        // } else if (result == 0) {
+        //     target += 2*log(rating[away_id]) - lden;
+        // } else {
+        //     target += log(k) + log(rating[home_id]) + log(rating[away_id]) - lden;
+        // }
+        real lden = log(rating[home_id] + rating[away_id]);
         if (result == 1) {
-            target += 2*log(rating[home_id]) - lden;
+            target += log(rating[home_id]) - lden;
         } else if (result == 0) {
-            target += 2*log(rating[away_id]) - lden;
+            target += log(rating[away_id]) - lden;
         } else {
-            target += log(k) + log(rating[home_id]) + log(rating[away_id]) - lden;
+            target += 0.5*log(rating[home_id]) + 0.5*log(rating[away_id]) - lden;
         }
     }
 }

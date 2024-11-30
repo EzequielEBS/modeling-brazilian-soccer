@@ -28,8 +28,7 @@ fit <- model$sample(data = list(n_players = n_players,
                     chains = 4, iter_warmup = 1000, iter_sampling = 1000, parallel_chains = 4)
 
 fit$save_object(file = "elo_rating/serie_a_brazil/elo_players/code/fit.rds")
-
-player_array_home[c(1:5),,]
+fit$save_object(file = "elo_rating/serie_a_brazil/elo_players/code/fit2.rds")
 
 
 fit <- readRDS("elo_rating/serie_a_brazil/elo_players/code/fit.rds")
@@ -42,41 +41,25 @@ stan_fit
 fit_summary <- fit$summary("rating")
 fit_summary$player_id <- players_id
 
-head(fit_summary)
-fit$summary("k")
+players_names <- read.csv("elo_rating/serie_a_brazil/elo_players/data/players_names.csv")
+perc_wins <- read.csv("elo_rating/serie_a_brazil/elo_players/data/perc_wins.csv")
+
+fit_summary <- merge(fit_summary, perc_wins, by = "player_id")
+fit_summary <- merge(fit_summary, players_names, by = "player_id")
 
 ordered_summary_mean <- fit_summary[order(fit_summary$mean, decreasing = TRUE),]
-
-head(ordered_summary_mean)
-
-players_names <- vector()
-
-for (i in 1:nrow(ordered_summary_mean)) {
-    player_id <- ordered_summary_mean$player_id[i]
-    player_name <- find_player_name(player_id)[1]
-    print(player_name)
-    players_names[i] <- player_name
-}
-
-ordered_summary_mean$player_name <- players_names
-ordered_summary_mean <- ordered_summary_mean[,c(c(1, 11, 12), c(2:10))]
+rownames(ordered_summary_mean) <- 1:nrow(ordered_summary_mean)
 
 ordered_summary_mean[1:20,]
 fit$summary("k")
 
 # ordered_summary_mean[ordered_summary_mean$player_name == "Player not found",]
 
-print(xtable(ordered_summary_mean[1:20,]), type = "latex", file = "elo_rating/serie_a_brazil/elo_players/data/post_mean_rating.tex")
+print(xtable(ordered_summary_mean[1:20, c("player_name", "mean", "median", "sd", "mad", "q5", "q95", "rhat", "perc_wins")]), type = "latex", file = "elo_rating/serie_a_brazil/elo_players/data/post_mean_rating_best.tex")
+print(xtable(ordered_summary_mean[(nrow(ordered_summary_mean)-20):nrow(ordered_summary_mean), c("player_name", "mean", "median", "sd", "mad", "q5", "q95", "rhat", "perc_wins")]), type = "latex", file = "elo_rating/serie_a_brazil/elo_players/data/post_mean_rating_worst.tex")
 
 write.csv(ordered_summary_mean, "elo_rating/serie_a_brazil/elo_players/data/post_mean_rating.csv")
 
+post_mean_rating <- read.csv("elo_rating/serie_a_brazil/elo_players/data/post_mean_rating.csv")
 
-
-
-
-###############################################################################################
-###############################################################################################
-
-
-
-load("elo_rating/serie_a_brazil/elo_players/data/results_array_clubs.RData")
+post_mean_rating[1:20,]

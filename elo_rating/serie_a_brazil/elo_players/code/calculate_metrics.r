@@ -9,9 +9,6 @@ load("elo_rating/serie_a_brazil/elo_players/data/player_array_away.RData")
 n_players <- length(players_id)
 n_games <- length(results_array)
 
-head(player_array_away[,,])
-print(dim(player_array_away[results_array == 1,,]))
-
 # Initialize the vector of total time played with zeros
 total_time_played <- numeric(length(players_id))
 names(total_time_played) <- players_id
@@ -87,7 +84,7 @@ count_games <- function(player_array) {
     for (player in 1:dim(player_array)[2]) {
       player_id <- as.character(player_array[game, player, 1])
       player_time <- player_array[game, player, 2]
-      if (player_id != "0" && player_time > 0) {
+      if (player_id != 0 && player_time > 0) {
         total_games[player_id] <<- total_games[player_id] + 1
       }
     }
@@ -97,6 +94,16 @@ count_games <- function(player_array) {
 # Count the games of the players
 count_games(player_array_home)
 count_games(player_array_away)
+
+# Count percentage of wins
+total_win_percentage <- total_win / total_games
+
+total_win_percentage_sorted <- total_win_percentage[order(total_win_percentage, decreasing = TRUE)]
+
+df_perc_wins <- data.frame(player_id = names(total_win_percentage_sorted),
+                           perc_wins = total_win_percentage_sorted)
+
+write.csv(df_perc_wins, "elo_rating/serie_a_brazil/elo_players/data/perc_wins.csv", row.names = FALSE)
 
 # Filter the players with more than 50 games
 filter_players <- total_games > 50
@@ -118,6 +125,20 @@ total_win_filtered <- total_win_filtered[order(total_win_filtered, decreasing = 
 
 df_wins <- data.frame(player_id = names(total_win_filtered),
                       n_win = total_win_filtered)
+
+
+
+players_names_perc <- vector()
+
+for (i in 1:nrow(df_wins_perc)) {
+    player_id <- df_wins_perc$player_id[i]
+    player_name <- find_player_name(player_id)[1]
+    print(player_name)
+    players_names_perc[i] <- player_name
+}
+
+df_wins_perc$player_name <- players_names_perc
+df_wins_perc <- df_wins_perc[,c(1, 3, 2)]
 
 players_names <- vector()
 

@@ -19,10 +19,9 @@ model <- cmdstan_model("elo_rating/serie_a_brazil/elo_clubs/code/elo_club_model.
 # Fit the model
 fit <- model$sample(data = list(n_clubs = n_clubs, 
                                 n_games = n_games,
-                                clubs_id = clubs_id,
+                                clubs_id = results_array_clubs[,1:2],
                                 results = results_array),
                     chains = 4, iter_warmup = 1000, iter_sampling = 1000, parallel_chains = 4)
-
 
 fit$save_object(file = "elo_rating/serie_a_brazil/elo_clubs/code/fit.rds")
 
@@ -32,6 +31,7 @@ fit$summary()
 
 fit_summary <- fit$summary("rating")
 
+df_clubs <- read.csv("elo_rating/serie_a_brazil/elo_clubs/data/clubs.csv")
 fit_summary$club <- df_clubs$club
 
 ordered_summary_mean <- fit_summary[order(fit_summary$mean, decreasing = TRUE),]

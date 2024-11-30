@@ -16,7 +16,7 @@ data {
     int<lower=0> n_players; // number of players
     int<lower=0> n_games; // number of games
     array[n_players] int<lower=0> players_id; // players id
-    array[n_games] real<lower=0, upper=1> results; // results of each game
+    array[n_games, 1] real<lower=0, upper=1> results; // results of each game
     array[n_games, 16, 2] real players_home_array; // home players and times for each game
     array[n_games, 16, 2] real players_away_array; // away players and times for each game
 }
@@ -59,7 +59,7 @@ model {
 
     // likelihood
     for (g in 1:n_games) {
-        real result = results[g];
+        real result = results[g, 1];
         real lden = log(home_teams_rating[g]^2 + away_teams_rating[g]^2 + home_teams_rating[g]*away_teams_rating[g]*k);
         if (result == 1) {
             target += 2*log(home_teams_rating[g]) - lden;
@@ -68,5 +68,13 @@ model {
         } else {
             target += log(k) + log(home_teams_rating[g]) + log(away_teams_rating[g]) - lden;
         }
+        // real lden = log(home_teams_rating[g] + away_teams_rating[g]);
+        // if (result == 1) {
+        //     target += log(home_teams_rating[g]) - lden;
+        // } else if (result == 0) {
+        //     target += log(away_teams_rating[g]) - lden;
+        // } else {
+        //     target += 0.5*log(home_teams_rating[g]) + 0.5*log(away_teams_rating[g]) - lden;
+        // }
     }
 }
